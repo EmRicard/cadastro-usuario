@@ -1,0 +1,252 @@
+/* ==========================================================================
+   ANIVAULT DESIGN SYSTEM (アニ記録)
+   Dark Cyberpunk, Glassmorphism & High-Energy Otaku Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Cores Base */
+  --av-bg-base: #07080d;
+  --av-bg-surface: rgba(18, 22, 38, 0.72);
+  --av-bg-surface-hover: rgba(28, 34, 58, 0.85);
+  --av-bg-card: rgba(14, 18, 32, 0.8);
+  --av-border-glass: rgba(255, 255, 255, 0.08);
+  --av-border-focus: rgba(124, 58, 237, 0.5);
+
+  /* Acentos Vibrantes */
+  --av-primary: #7c3aed;
+  --av-primary-glow: rgba(124, 58, 237, 0.35);
+  --av-primary-hover: #9061f9;
+  --av-accent: #00f5d4;
+  --av-accent-glow: rgba(0, 245, 212, 0.3);
+  --av-gold: #f59e0b;
+  --av-gold-glow: rgba(245, 158, 11, 0.3);
+  --av-pink: #ff007f;
+
+  /* Cores de Status */
+  --av-status-watching: #06b6d4;
+  --av-status-watching-bg: rgba(6, 182, 212, 0.15);
+  --av-status-completed: #10b981;
+  --av-status-completed-bg: rgba(16, 185, 129, 0.15);
+  --av-status-planned: #a855f7;
+  --av-status-planned-bg: rgba(168, 85, 247, 0.15);
+  --av-status-paused: #6b7280;
+  --av-status-paused-bg: rgba(107, 114, 128, 0.15);
+
+  /* Textos */
+  --av-text-main: #f8fafc;
+  --av-text-secondary: #cbd5e1;
+  --av-text-muted: #94a3b8;
+  --av-text-dim: #64748b;
+
+  /* Fontes */
+  --av-font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --av-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sombras e Elevação */
+  --av-shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --av-shadow-glow-purple: 0 0 25px rgba(124, 58, 237, 0.35);
+  --av-shadow-glow-cyan: 0 0 25px rgba(0, 245, 212, 0.3);
+  --av-radius-sm: 8px;
+  --av-radius-md: 14px;
+  --av-radius-lg: 20px;
+  --av-radius-xl: 28px;
+}
+
+/* Background Geral com Gradientes Sutis */
+body {
+  background-color: var(--av-bg-base) !important;
+  color: var(--av-text-main) !important;
+  font-family: var(--av-font-body);
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 245, 212, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.03) 0%, transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090e;
+}
+::-webkit-scrollbar-thumb {
+  background: #252c48;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--av-primary);
+}
+
+/* Utilitários de Tipografia Display */
+.font-display {
+  font-family: var(--av-font-display);
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+/* Glassmorphism Cards & Containers */
+.glass-panel {
+  background: var(--av-bg-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--av-border-glass);
+  box-shadow: var(--av-shadow-card);
+}
+
+.glass-card {
+  background: var(--av-bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--av-border-glass);
+  border-radius: var(--av-radius-md);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), var(--av-shadow-glow-purple);
+  transform: translateY(-4px);
+}
+
+/* Efeito de Gradiente de Texto e Acentos */
+.text-gradient-purple-cyan {
+  background: linear-gradient(135deg, #a78bfa 0%, #00f5d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Botões Estilizados */
+.btn-anivault-primary {
+  background: linear-gradient(135deg, var(--av-primary) 0%, #6d28d9 100%);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  border-radius: var(--av-radius-sm);
+  padding: 0.6rem 1.25rem;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-anivault-primary:hover {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.55);
+  transform: translateY(-2px);
+}
+
+.btn-anivault-outline {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--av-text-secondary);
+  border: 1px solid var(--av-border-glass);
+  border-radius: var(--av-radius-sm);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-anivault-outline:hover, .btn-anivault-outline.active {
+  background: rgba(124, 58, 237, 0.18);
+  border-color: var(--av-primary);
+  color: #ffffff;
+}
+
+/* Badges de Status Personalizadas */
+.badge-status-assistindo {
+  background-color: var(--av-status-watching-bg);
+  color: var(--av-status-watching);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.badge-status-assistido {
+  background-color: var(--av-status-completed-bg);
+  color: var(--av-status-completed);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-status-quero_assistir {
+  background-color: var(--av-status-planned-bg);
+  color: var(--av-status-planned);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-status-pausado {
+  background-color: var(--av-status-paused-bg);
+  color: var(--av-status-paused);
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+/* Inputs Escuros com Foco Néon */
+.anivault-input {
+  background-color: rgba(14, 17, 30, 0.85) !important;
+  border: 1px solid var(--av-border-glass) !important;
+  color: var(--av-text-main) !important;
+  border-radius: var(--av-radius-sm) !important;
+  transition: all 0.2s ease;
+}
+
+.anivault-input:focus {
+  background-color: rgba(18, 22, 38, 0.95) !important;
+  border-color: var(--av-primary) !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25) !important;
+  color: #ffffff !important;
+}
+
+.anivault-input::placeholder {
+  color: var(--av-text-dim) !important;
+}
+
+/* Animações e Transições Fluídas */
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.list-item-hover {
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.list-item-hover:hover {
+  background-color: rgba(30, 38, 65, 0.6) !important;
+  border-color: rgba(124, 58, 237, 0.3) !important;
+}
+
+/* Modais Customizados AniVault */
+.anivault-modal-content {
+  background: #0f1322 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--av-radius-lg) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85), 0 0 30px rgba(124, 58, 237, 0.2) !important;
+  color: var(--av-text-main) !important;
+}
+
+.anivault-modal-header {
+  border-bottom: 1px solid var(--av-border-glass) !important;
+}
+
+.anivault-modal-footer {
+  border-top: 1px solid var(--av-border-glass) !important;
+}
